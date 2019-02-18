@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Isicine</string>
+    <string name="default_title">Ciné Dome - Films</string>
+    <string name="director">Directeur: </string>
+    <string name="rating_press_text">Presse: </string>
+    <string name="rating_public_text">Public: </string>
+</resources>
