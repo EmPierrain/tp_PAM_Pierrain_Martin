@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnMo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.default_title);
         listeFilms = findViewById(R.id.ListeFilms);
         listeFilms.setLayoutManager(new LinearLayoutManager(getApplicationContext()));

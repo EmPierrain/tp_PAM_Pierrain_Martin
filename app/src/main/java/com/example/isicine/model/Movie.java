@@ -10,5 +10,6 @@ public class Movie implements Serializable{
     public int runtime;
     public ArrayList<Genre> genre;
     public Statistics statistics;
+    public Trailer trailer;
 }
 
