@@ -15,7 +15,7 @@ public class ApiHelper {
     private ApiHelper() {
         Retrofit retrofit = new Retrofit.Builder().baseUrl("http://etudiants.openium.fr/").addConverterFactory(GsonConverterFactory.create()).build();
         cineAPI = retrofit.create(CineAPI.class);
-        Log.d("ApiHelper", retrofit.toString());
+
 
     }
 

@@ -35,12 +35,10 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnMo
         listeFilms.setAdapter(movieAdapter);
         //listeFilms.setLayoutManager();
 
-        Log.d("MainActivity", "Starting activity");
         ApiHelper json = ApiHelper.getInstance();
         json.getCineAPI().getCine().enqueue(new Callback<CineJSON>() {
             @Override
             public void onResponse(Call<CineJSON> call, Response<CineJSON> response) {
-                Log.d("MainActivity", "Get response");
                 CineJSON json = response.body();
 
                 for(Film film:json.movieShowtimes){
@@ -49,21 +47,18 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnMo
                 }
 
 
-                Log.d("MainActivity", response.body().place.theater.code);
             }
 
             @Override
             public void onFailure(Call<CineJSON> call, Throwable t) {
-                Log.d("MainActivity", "Impossible to get JSON");
-                Log.e("MainActivity", "STACK");
-                t.printStackTrace();
+
             }
+
         });
     }
 
     @Override
     public void onMovieClicked(Film movie) {
-        Log.d("MainActivity", "Click "+movie.onShow.movie.poster.href);
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra("MOVIE", movie);
         startActivity(intent);

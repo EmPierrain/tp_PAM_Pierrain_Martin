@@ -95,7 +95,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
 
         @Override
         public void onClick(View v) {
-            Log.d("MovieAdapter", "CLICK");
+
         }
     }
     public interface OnMovieClickedListener {

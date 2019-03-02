@@ -80,9 +80,9 @@ public class DetailActivity extends AppCompatActivity {
 
         shareAction = (ShareActionProvider) actionProvider;
 
-        String shareMessage = "REGARDE C'EST COOL ! Ce film à l'air super bien ! Il s'appelle " + movie.onShow.movie.title + ".";
+        String shareMessage = "REGARDE C'EST COOL ! Ce film à l'air super bien ! Il s'appelle \"" + movie.onShow.movie.title + "\".";
         if(movie.onShow.movie.trailer !=null && movie.onShow.movie.trailer.href != null)
-            shareMessage = shareMessage + "Regarde le trailer ici: "+ movie.onShow.movie.trailer.href;
+            shareMessage = shareMessage + " Regarde le trailer ici: "+ movie.onShow.movie.trailer.href;
 
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
@@ -96,9 +96,6 @@ public class DetailActivity extends AppCompatActivity {
         if(shareAction!=null){
             shareAction.setShareIntent(shareIntent);
         }
-        else{
-            Log.d("DetailActivity","fail to set share intent");
-        }
     }
 
     public void playTrailer(View v){
@@ -108,7 +105,7 @@ public class DetailActivity extends AppCompatActivity {
             startActivity(intent);
         }
         catch (NullPointerException e){
-            Log.d("DetailActivity","Y'a pas d'url :(");
+
         }
     }
 
